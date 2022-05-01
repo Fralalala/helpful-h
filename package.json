@@ -1,0 +1,21 @@
+{
+  "name": "helpful_human",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fralalala/helpful-h.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fralalala/helpful-h/issues"
+  },
+  "homepage": "https://github.com/Fralalala/helpful-h#readme"
+}
