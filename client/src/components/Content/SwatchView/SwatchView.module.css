@@ -1,0 +1,26 @@
+.base {
+  padding: 20px;
+  padding-top: 0px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 20px;
+}
+
+.shade_list {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  flex-grow: 1;
+  max-height: 30%;
+}
+
+.clear_btn {
+  height: 50px;
+  width: fit-content;
+  padding: 0px 20px;
+  margin: 15px auto;
+  border-radius: 10px;
+  border: 1px solid #cfcfcf;
+  cursor: pointer;
+}

@@ -1,0 +1,6 @@
+.base { 
+    flex-grow: 1;
+    display: flex;
+    padding: 40px 30px 30px 30px;
+    justify-content: center;
+}

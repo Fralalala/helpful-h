@@ -1,0 +1,8 @@
+.base {
+  padding: 10px 5px 10px 25px;
+  font-size: 1.3em;
+  cursor: pointer;
+  color: #2e2e2e;
+  font-weight: bold;
+  -webkit-text-stroke: .01px #e1e1e136;
+}

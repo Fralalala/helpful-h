@@ -1,0 +1,20 @@
+.base {
+  flex-grow: 1;
+  border: 1px solid #999999;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.color_content {
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.card_footer {
+  padding: 13px;
+  font-size: 1.7em;
+  background-color: white;
+  border-radius: 0 0 10px 10px;
+}

@@ -1,0 +1,18 @@
+.base {
+  min-width: 300px;
+  max-width: 300px;
+  background: #ededed;
+  padding-top: 40px;
+  flex-grow: 1;
+}
+
+.random_btn {
+  font-size: 1.3em;
+  border: 1px solid #afafaf;
+  width: fit-content;
+  margin: 0 auto 25px auto;
+  padding: 7px 25px;
+  background: white;
+  border-radius: 7px;
+  cursor: pointer;
+}
