@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.85cfbdb1.css",
+    "main.js": "/static/js/main.7f7f7405.js",
+    "static/media/hh_logo.svg": "/static/media/hh_logo.d7be8a29dac632a82ee5491645ec75d9.svg",
+    "index.html": "/index.html",
+    "main.85cfbdb1.css.map": "/static/css/main.85cfbdb1.css.map",
+    "main.7f7f7405.js.map": "/static/js/main.7f7f7405.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.85cfbdb1.css",
+    "static/js/main.7f7f7405.js"
+  ]
+}
