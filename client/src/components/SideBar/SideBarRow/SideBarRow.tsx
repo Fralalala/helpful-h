@@ -1,7 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from "./SideBarRow.module.css";
 import { motion } from "framer-motion";
 import { Color } from "../../../type/cssType";
+import {
+  ColorContext,
+  ColorContextInterface,
+} from "../../../context/ColorContext";
 
 type Props = {
   title: string;
@@ -9,6 +13,15 @@ type Props = {
 };
 
 const SideBarRow = ({ title, hoverColor }: Props) => {
+  const { setSelectedGroup } = useContext(
+    ColorContext
+  ) as ColorContextInterface;
+
+  const onRowClick = () => {
+    if (title.toLowerCase() === "all") setSelectedGroup("");
+    else setSelectedGroup(title.toLowerCase());
+  };
+
   return (
     <motion.div
       whileHover={{
@@ -19,6 +32,7 @@ const SideBarRow = ({ title, hoverColor }: Props) => {
       transition={{ duration: 0.2 }}
       className={classes.base}
       style={{ color: hoverColor }}
+      onClick={onRowClick}
     >
       {title}
     </motion.div>

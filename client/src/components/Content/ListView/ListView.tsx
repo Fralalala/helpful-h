@@ -10,16 +10,16 @@ import {
 } from "../../../context/ColorContext";
 
 const ListView = () => {
-  const { data, filteredData, input } = useContext(
-    ColorContext
-  ) as ColorContextInterface;
+  const { data, filteredData, input, selectedGroup, groupCollection } =
+    useContext(ColorContext) as ColorContextInterface;
 
   const [currentPage, setCurrentPage] = useState(1);
   const [slicedData, setSlicedData] = useState<ColorData[]>([]);
   const [totalPages, setTotalPages] = useState<number>(1);
 
   const sliceColors = () => {
-    const refData = input ? filteredData : data;
+    let refData = input ? filteredData : data;
+    if (selectedGroup) refData = groupCollection[selectedGroup];
 
     setSlicedData(
       refData.slice(
@@ -34,9 +34,11 @@ const ListView = () => {
   useEffect(() => {
     sliceColors();
 
-    const refData = input ? filteredData : data;
+    let refData = input ? filteredData : data;
+    if (selectedGroup) refData = groupCollection[selectedGroup];
+
     setTotalPages(Math.max(Math.ceil(refData.length / 12), 1));
-  }, [currentPage, input, data]);
+  }, [currentPage, input, data, selectedGroup]);
 
   return (
     <div className={classes.base}>

@@ -33,14 +33,15 @@ const SideBar = () => {
         Random Color
       </motion.div>
 
+      <SideBarRow title={"All"} hoverColor={"#7c7c7c"} />
       <SideBarRow title={"Red"} hoverColor={"#ff6666"} />
       <SideBarRow title={"Orange"} hoverColor={"#ffb266"} />
       <SideBarRow title={"Yellow"} hoverColor={"#d9ce00"} />
       <SideBarRow title={"Green"} hoverColor={"#2a9b00"} />
       <SideBarRow title={"Blue"} hoverColor={"#228cd3"} />
       <SideBarRow title={"Purple"} hoverColor={"#ab66ff"} />
-      <SideBarRow title={"Brown"} hoverColor={"#eab67b"} />
-      <SideBarRow title={"Grey"} hoverColor={"#7c7c7c"} />
+      {/* <SideBarRow title={"Brown"} hoverColor={"#eab67b"} />
+      <SideBarRow title={"Grey"} hoverColor={"#7c7c7c"} /> */}
     </div>
   );
 };
