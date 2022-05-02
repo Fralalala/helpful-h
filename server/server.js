@@ -14,7 +14,7 @@ const publicPath = path.join(__dirname, "..", "client", "build");
 
 app.use(cors());
 app.use(express.json());
-app.use("/api", router);
+app.use(router);
 
 // app.use(middlewares);
 
