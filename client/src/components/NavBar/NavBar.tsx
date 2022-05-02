@@ -17,7 +17,7 @@ const NavBar = () => {
   const onInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     const newInput = e.target.value;
     const filteredData = data.filter((element) =>
-      element.toLowerCase().includes(newInput.toLowerCase())
+      element.hex.toLowerCase().includes(newInput.toLowerCase())
     );
 
     setInput(newInput);

@@ -15,7 +15,7 @@ const SideBar = () => {
   const onRandomColorClick = () => {
     const randomIndex = Math.floor(Math.random() * data.length);
 
-    navigate(`/color/${data[randomIndex]}`);
+    navigate(`/color/${data[randomIndex].hex}`);
   };
 
   return (

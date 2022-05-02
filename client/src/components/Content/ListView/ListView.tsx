@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import {
   ColorContext,
   ColorContextInterface,
+  ColorData,
 } from "../../../context/ColorContext";
 
 const ListView = () => {
@@ -14,7 +15,7 @@ const ListView = () => {
   ) as ColorContextInterface;
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [slicedData, setSlicedData] = useState<Color[]>([]);
+  const [slicedData, setSlicedData] = useState<ColorData[]>([]);
   const [totalPages, setTotalPages] = useState<number>(1);
 
   const sliceColors = () => {
@@ -31,20 +32,18 @@ const ListView = () => {
   const onPageClick = (value: number) => setCurrentPage(value);
 
   useEffect(() => {
+    sliceColors();
+
     const refData = input ? filteredData : data;
     setTotalPages(Math.max(Math.ceil(refData.length / 12), 1));
-  }, []);
-
-  useEffect(() => {
-    sliceColors();
-  }, [currentPage, input]);
+  }, [currentPage, input, data]);
 
   return (
     <div className={classes.base}>
       <div className={classes.card_list}>
         {slicedData.map((_data) => (
           <ColorCard
-            featuredColor={_data}
+            featuredColor={_data.hex}
             style={{
               flex: "1 0 24%",
               height: 224,
