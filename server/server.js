@@ -7,13 +7,13 @@ const cors = require("cors");
 const app = express();
 
 const router = jsonServer.router("data.json");
-const middlewares = jsonServer.defaults();
+// const middlewares = jsonServer.defaults();
 
 const port = process.env.PORT || 4000;
 const publicPath = path.join(__dirname, "..", "client", "build");
 
 app.use(router);
-app.use(middlewares);
+// app.use(middlewares);
 app.use(cors());
 
 app.use(
