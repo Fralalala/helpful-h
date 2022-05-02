@@ -6,21 +6,20 @@ const schema = require("./schema.js");
 const cors = require("cors");
 const app = express();
 
-const router = jsonServer.router("data.json");
-const middlewares = jsonServer.defaults();
+const router = jsonServer.router("./data.json");
+// const middlewares = jsonServer.defaults();
 
 const port = process.env.PORT || 4000;
 const publicPath = path.join(__dirname, "..", "client", "build");
 
 app.use(cors());
+app.use(express.json());
 app.use("/api", router);
 
-console.log(router);
-
-app.use(middlewares);
+// app.use(middlewares);
 
 app.use(
-  "/api/graphql",
+  "/graphql",
   graphqlHTTP({
     schema: schema,
     graphiql: true,
