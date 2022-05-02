@@ -1,4 +1,4 @@
-// const app = express();
+const app = express();
 const express = require("express");
 const path = require("path");
 const { graphqlHTTP } = require("express-graphql");
@@ -9,7 +9,7 @@ const jsonServer = require("json-server");
 const router = jsonServer.router("data.json");
 const middlewares = jsonServer.defaults();
 
-const app = jsonServer.create();
+// const app = jsonServer.create();
 
 const port = process.env.PORT || 4000;
 const publicPath = path.join(__dirname, "..", "client", "build");
@@ -26,7 +26,7 @@ app.use(
     graphiql: true,
   })
 );
-  
+
 app.get("*", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
 });
