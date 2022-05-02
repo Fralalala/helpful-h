@@ -12,17 +12,17 @@ const router = jsonServer.router("data.json");
 const port = process.env.PORT || 4000;
 const publicPath = path.join(__dirname, "..", "client", "build");
 
-app.use(router);
+// app.use(router);
 // app.use(middlewares);
 app.use(cors());
 
-app.use(
-  "/api/graphql",
-  graphqlHTTP({
-    schema: schema,
-    graphiql: true,
-  })
-);
+// app.use(
+//   "/api/graphql",
+//   graphqlHTTP({
+//     schema: schema,
+//     graphiql: true,
+//   })
+// );
 
 app.use(express.static(publicPath));
 
