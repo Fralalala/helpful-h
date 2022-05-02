@@ -6,7 +6,6 @@ const schema = require("./schema.js");
 const cors = require("cors");
 const app = express();
 
-const jsonServer = require("json-server");
 const router = jsonServer.router("data.json");
 const middlewares = jsonServer.defaults();
 
@@ -29,7 +28,6 @@ app.use(
 );
 
 app.use(express.static(publicPath));
-app.use("/api", jsonServer.router("data.json"));
 
 app.get("*", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
