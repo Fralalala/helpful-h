@@ -5,7 +5,7 @@ const middlewares = jsonServer.defaults({
   static: "./build",
 });
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 3002;
 const publicPath = path.join(__dirname, "..", "client", "build");
 
 server.use(middlewares);
@@ -20,6 +20,6 @@ server.get("*", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
 });
 
-server.listen(PORT, () => {
+server.listen(port, () => {
   console.log("Server is running");
 });
