@@ -1,36 +1,25 @@
-const app = express();
-const express = require("express");
-const path = require("path");
-const { graphqlHTTP } = require("express-graphql");
-const schema = require("./schema.js");
-const cors = require("cors");
-
 const jsonServer = require("json-server");
-const router = jsonServer.router("data.json");
-const middlewares = jsonServer.defaults();
-
-// const app = jsonServer.create();
+const server = jsonServer.create();
+const router = jsonServer.router("./db.json");
+const middlewares = jsonServer.defaults({
+  static: "./build",
+});
 
 const port = process.env.PORT || 4000;
 const publicPath = path.join(__dirname, "..", "client", "build");
 
-app.use(router);
-app.use(middlewares);
-app.use(cors());
-app.use(express.static(publicPath));
-
-app.use(
-  "/graphql",
-  graphqlHTTP({
-    schema: schema,
-    graphiql: true,
+server.use(middlewares);
+server.use(
+  jsonServer.rewriter({
+    "/api/*": "/$1",
   })
 );
+server.use(router);
 
-app.get("*", (req, res) => {
+server.get("*", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
 });
 
-app.listen(port, () => {
-  console.log(`Server is up on port ${port}!`);
+server.listen(PORT, () => {
+  console.log("Server is running");
 });
