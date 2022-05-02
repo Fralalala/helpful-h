@@ -12,7 +12,7 @@ const router = jsonServer.router("data.json");
 const port = process.env.PORT || 4000;
 const publicPath = path.join(__dirname, "..", "client", "build");
 
-app.use(router);
+app.use("/api", router);
 // app.use(middlewares);
 // app.use(cors());
 
@@ -26,7 +26,7 @@ app.use(router);
 
 app.use(express.static(publicPath));
 
-app.get("/*", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(path.join(publicPath, "index.html"));
 });
 
