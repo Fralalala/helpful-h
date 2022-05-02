@@ -9,15 +9,12 @@ const app = express();
 const router = jsonServer.router("data.json");
 const middlewares = jsonServer.defaults();
 
-// const app = jsonServer.create();
-
 const port = process.env.PORT || 4000;
 const publicPath = path.join(__dirname, "..", "client", "build");
 
 app.use(router);
 app.use(middlewares);
 app.use(cors());
-app.use(express.static(publicPath));
 
 app.use(
   "/api/graphql",
