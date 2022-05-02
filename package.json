@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "concurrently \"nodemon node server/server.js\" \"json-server --watch server/data.json --port 8000\" ",
+    "start": " nodemon node server/server.js  ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/Fralalala/helpful-h#readme",
   "dependencies": {
+    "axios": "^0.27.2",
     "concurrently": "^7.1.0",
+    "hsl-to-hex": "^1.0.0",
     "nodemon": "^2.0.6"
   }
 }
